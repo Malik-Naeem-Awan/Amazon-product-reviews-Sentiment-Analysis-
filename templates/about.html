@@ -1,0 +1,523 @@
+
+{% extends "base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+			<div class="page-inner">
+					<!-- Card -->
+				<div class="card bg-dark text-white">
+					<img class="card-img" src="../static/img/gif.gif" width="300" height="590" alt="Card image">
+				</div>
+				<div class="card-body text-center">
+					<div class="card-opening"><h1>Sentiment Analysis on Product Reviews: Amazon </h1> </div>
+					<div class="card-desc">
+						<h2>To make sense of sentiments expressed in product review section of Amazon.</h2>
+						<h2>Help the seller know how a customer feels about their product.</h2>
+						<h2>Help customer know the general sentiments of the product.</h2>
+					</div>
+					<div class="card-detail">
+						<div class="btn btn-secondary btn-rounded">Try Out</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 col-md-3">
+						<div class="card card-stats card-primary card-round">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-5">
+										<div class="icon-big text-center">
+											<i class="flaticon-users"></i>
+										</div>
+									</div>
+									<div class="col-7 col-stats">
+										<div class="numbers">
+											<p class="card-category">Visitors</p>
+											<h4 class="card-title">1,294</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<div class="card card-stats card-info card-round">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-5">
+										<div class="icon-big text-center">
+											<i class="flaticon-interface-6"></i>
+										</div>
+									</div>
+									<div class="col-7 col-stats">
+										<div class="numbers">
+											<p class="card-category">Subscribers</p>
+											<h4 class="card-title">1303</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<div class="card card-stats card-success card-round">
+							<div class="card-body ">
+								<div class="row">
+									<div class="col-5">
+										<div class="icon-big text-center">
+											<i class="flaticon-analytics"></i>
+										</div>
+									</div>
+									<div class="col-7 col-stats">
+										<div class="numbers">
+											<p class="card-category">Insights</p>
+											<h4 class="card-title">104+</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-3">
+						<div class="card card-stats card-secondary card-round">
+							<div class="card-body ">
+								<div class="row">
+									<div class="col-5">
+										<div class="icon-big text-center">
+											<i class="flaticon-success"></i>
+										</div>
+									</div>
+									<div class="col-7 col-stats">
+										<div class="numbers">
+											<p class="card-category">Reviews</p>
+											<h4 class="card-title">20</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-body pb-0">
+								<div class="h1 fw-bold float-right text-primary">+5%</div>
+								<h2 class="mb-2">17</h2>
+								<p class="text-muted">Users online</p>
+								<div class="pull-in sparkline-fix">
+									<div id="lineChart"><canvas width="384" height="70" style="display: inline-block; width: 384.925px; height: 70px; vertical-align: top;"></canvas></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-body pb-0">
+								<div class="h1 fw-bold float-right text-danger">-3%</div>
+								<h2 class="mb-2">27</h2>
+								<p class="text-muted">New Users</p>
+								<div class="pull-in sparkline-fix">
+									<div id="lineChart2"><canvas width="384" height="70" style="display: inline-block; width: 384.925px; height: 70px; vertical-align: top;"></canvas></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-body pb-0">
+								<div class="h1 fw-bold float-right text-warning">+7%</div>
+								<h2 class="mb-2">213</h2>
+								<p class="text-muted">Profits Generated</p>
+								<div class="pull-in sparkline-fix">
+									<div id="lineChart3"><canvas width="384" height="70" style="display: inline-block; width: 384.925px; height: 70px; vertical-align: top;"></canvas></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Customized Card -->
+				<h4 class="page-title">OUR TEAM</h4>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="card card-profile">
+							<div class="card-header" style="background-image: url('../static/img/blogpost.jpg')">
+								<div class="profile-picture">
+									<div class="avatar avatar-xxl">
+										<img src="../static/img/profile2.jpg" alt="..." class="avatar-img rounded-circle">
+									</div>
+								</div>
+							</div>
+							<div class="card-body">
+								<div class="user-profile text-center">
+									<div class="name">Muhammad Naeem Ur Rehman</div>
+									<div class="job">Software Engineer</div>
+									<div class="desc">“Truth can only be found in one place: the code.”</div>
+									<div class="social-media">
+										<a class="btn btn-info btn-twitter btn-sm btn-link" href="#">
+											<span class="btn-label just-icon"><i class="flaticon-twitter"></i> </span>
+										</a>
+										<a class="btn btn-danger btn-sm btn-link" rel="publisher" href="#">
+											<span class="btn-label just-icon"><i class="flaticon-google-plus"></i> </span>
+										</a>
+										<a class="btn btn-primary btn-sm btn-link" rel="publisher" href="#">
+											<span class="btn-label just-icon"><i class="flaticon-facebook"></i> </span>
+										</a>
+										<a class="btn btn-danger btn-sm btn-link" rel="publisher" href="#">
+											<span class="btn-label just-icon"><i class="flaticon-dribbble"></i> </span>
+										</a>
+									</div>
+									<div class="view-profile">
+										<a href="#" class="btn btn-secondary btn-block">View Full Profile</a>
+									</div>
+								</div>
+							</div>
+							<div class="card-footer">
+								<div class="row user-stats text-center">
+									<div class="col">
+										<div class="number">125</div>
+										<div class="title">Post</div>
+									</div>
+									<div class="col">
+										<div class="number">25K</div>
+										<div class="title">Followers</div>
+									</div>
+									<div class="col">
+										<div class="number">134</div>
+										<div class="title">Following</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card card-profile">
+							<div class="card-header" style="background-image: url('../static/img/blogpost.jpg')">
+								<div class="profile-picture">
+									<div class="avatar avatar-xxl">
+										<img src="../static/img/profile3.jpg" alt="..." class="avatar-img rounded-circle">
+									</div>
+								</div>
+							</div>
+							<div class="card-body">
+								<div class="user-profile text-center">
+									<div class="name">Muhammad Zubair Iqbal</div>
+									<div class="job">Project Manager</div>
+									<div class="desc">“Inventories can be managed but people must be led.”</div>
+									<div class="social-media">
+										<a class="btn btn-info btn-twitter btn-sm btn-link" href="#">
+											<span class="btn-label just-icon"><i class="flaticon-twitter"></i> </span>
+										</a>
+										<a class="btn btn-danger btn-sm btn-link" rel="publisher" href="#">
+											<span class="btn-label just-icon"><i class="flaticon-google-plus"></i> </span>
+										</a>
+										<a class="btn btn-primary btn-sm btn-link" rel="publisher" href="#">
+											<span class="btn-label just-icon"><i class="flaticon-facebook"></i> </span>
+										</a>
+										<a class="btn btn-danger btn-sm btn-link" rel="publisher" href="#">
+											<span class="btn-label just-icon"><i class="flaticon-dribbble"></i> </span>
+										</a>
+									</div>
+									<div class="view-profile">
+										<a href="#" class="btn btn-secondary btn-block">View Full Profile</a>
+									</div>
+								</div>
+							</div>
+							<div class="card-footer">
+								<div class="row user-stats text-center">
+									<div class="col">
+										<div class="number">225</div>
+										<div class="title">Post</div>
+									</div>
+									<div class="col">
+										<div class="number">35K</div>
+										<div class="title">Followers</div>
+									</div>
+									<div class="col">
+										<div class="number">554</div>
+										<div class="title">Following</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card card-profile">
+							<div class="card-header" style="background-image: url('../static/img/blogpost.jpg')">
+								<div class="profile-picture">
+									<div class="avatar avatar-xxl">
+										<img src="../static/img/profile1.jpg" alt="..." class="avatar-img rounded-circle">
+									</div>
+								</div>
+							</div>
+							<div class="card-body">
+								<div class="user-profile text-center">
+									<div class="name">Muhammad Mahad Shahid</div>
+									<div class="job">Frontend Developer</div>
+									<div class="desc">“Code is read more than it is written.”</div>
+									<div class="social-media">
+										<a class="btn btn-info btn-twitter btn-sm btn-link" href="#">
+											<span class="btn-label just-icon"><i class="flaticon-twitter"></i> </span>
+										</a>
+										<a class="btn btn-danger btn-sm btn-link" rel="publisher" href="#">
+											<span class="btn-label just-icon"><i class="flaticon-google-plus"></i> </span>
+										</a>
+										<a class="btn btn-primary btn-sm btn-link" rel="publisher" href="#">
+											<span class="btn-label just-icon"><i class="flaticon-facebook"></i> </span>
+										</a>
+										<a class="btn btn-danger btn-sm btn-link" rel="publisher" href="#">
+											<span class="btn-label just-icon"><i class="flaticon-dribbble"></i> </span>
+										</a>
+									</div>
+									<div class="view-profile">
+										<a href="#" class="btn btn-secondary btn-block">View Full Profile</a>
+									</div>
+								</div>
+							</div>
+							<div class="card-footer">
+								<div class="row user-stats text-center">
+									<div class="col">
+										<div class="number">112</div>
+										<div class="title">Post</div>
+									</div>
+									<div class="col">
+										<div class="number">28K</div>
+										<div class="title">Followers</div>
+									</div>
+									<div class="col">
+										<div class="number">450</div>
+										<div class="title">Following</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+					</div>
+					<div class="col-md-4">
+						<div class="card card-profile">
+							<div class="card-header" style="background-image: url('../static/img/blogpost.jpg')">
+								<div class="profile-picture">
+									<div class="avatar avatar-xxl">
+										<img src="../static/img/profile4.jpg" alt="..." class="avatar-img rounded-circle">
+									</div>
+								</div>
+							</div>
+							<div class="card-body">
+								<div class="user-profile text-center">
+									<div class="name">Aimma Zia</div>
+									<div class="job">Software Engineer</div>
+									<div class="desc">"Before software can be reusable it first has to be usable."</div>
+									<div class="social-media">
+										<a class="btn btn-info btn-twitter btn-sm btn-link" href="#">
+											<span class="btn-label just-icon"><i class="flaticon-twitter"></i> </span>
+										</a>
+										<a class="btn btn-danger btn-sm btn-link" rel="publisher" href="#">
+											<span class="btn-label just-icon"><i class="flaticon-google-plus"></i> </span>
+										</a>
+										<a class="btn btn-primary btn-sm btn-link" rel="publisher" href="#">
+											<span class="btn-label just-icon"><i class="flaticon-facebook"></i> </span>
+										</a>
+										<a class="btn btn-danger btn-sm btn-link" rel="publisher" href="#">
+											<span class="btn-label just-icon"><i class="flaticon-dribbble"></i> </span>
+										</a>
+									</div>
+									<div class="view-profile">
+										<a href="#" class="btn btn-secondary btn-block">View Full Profile</a>
+									</div>
+								</div>
+							</div>
+							<div class="card-footer">
+								<div class="row user-stats text-center">
+									<div class="col">
+										<div class="number">12</div>
+										<div class="title">Post</div>
+									</div>
+									<div class="col">
+										<div class="number">12K</div>
+										<div class="title">Followers</div>
+									</div>
+									<div class="col">
+										<div class="number">224</div>
+										<div class="title">Following</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+	<!-- Atlantis DEMO methods, don't include it in your project! -->
+	<script src="/static/js/setting-demo.js"></script>
+<script>
+		$('#lineChart').sparkline([102,109,120,99,110,105,115], {
+			type: 'line',
+			height: '70',
+			width: '100%',
+			lineWidth: '2',
+			lineColor: '#177dff',
+			fillColor: 'rgba(23, 125, 255, 0.14)'
+		});
+
+		$('#lineChart2').sparkline([99,125,122,105,110,124,115], {
+			type: 'line',
+			height: '70',
+			width: '100%',
+			lineWidth: '2',
+			lineColor: '#f3545d',
+			fillColor: 'rgba(243, 84, 93, .14)'
+		});
+
+		$('#lineChart3').sparkline([105,103,123,100,95,105,115], {
+			type: 'line',
+			height: '70',
+			width: '100%',
+			lineWidth: '2',
+			lineColor: '#ffa534',
+			fillColor: 'rgba(255, 165, 52, .14)'
+		});
+
+		$('#lineChart4').sparkline([102,109,120,99,110,105,115], {
+			type: 'line',
+			height: '70',
+			width: '100%',
+			lineWidth: '2',
+			lineColor: 'rgba(255, 255, 255, .5)',
+			fillColor: 'rgba(255, 255, 255, .15)'
+		});
+
+		$('#lineChart5').sparkline([99,125,122,105,110,124,115], {
+			type: 'line',
+			height: '70',
+			width: '100%',
+			lineWidth: '2',
+			lineColor: 'rgba(255, 255, 255, .5)',
+			fillColor: 'rgba(255, 255, 255, .15)'
+		});
+
+		$('#lineChart6').sparkline([105,103,123,100,95,105,115], {
+			type: 'line',
+			height: '70',
+			width: '100%',
+			lineWidth: '2',
+			lineColor: 'rgba(255, 255, 255, .5)',
+			fillColor: 'rgba(255, 255, 255, .15)'
+		});
+	</script>
+	<script>
+	var positive = "{{ positive }}";
+	var negative = "{{ negative }}";
+	var neutral = "{{ neutral }}";
+	var total_reviews = "{{ total_reviews }}";
+
+		Circles.create({
+			id:'circles-1',
+			radius:45,
+			value:((neutral*100)/total_reviews),
+			maxValue:100,
+			width:7,
+			text: neutral,
+			colors:['#f1f1f1', '#FF9E27'],
+			duration:400,
+			wrpClass:'circles-wrp',
+			textClass:'circles-text',
+			styleWrapper:true,
+			styleText:true
+		})
+
+		Circles.create({
+			id:'circles-2',
+			radius:45,
+			value:((positive*100)/total_reviews),
+			maxValue:100,
+			width:7,
+			text: positive,
+			colors:['#f1f1f1', '#2BB930'],
+			duration:400,
+			wrpClass:'circles-wrp',
+			textClass:'circles-text',
+			styleWrapper:true,
+			styleText:true
+		})
+
+		Circles.create({
+			id:'circles-3',
+			radius:45,
+			value:((negative*100)/total_reviews),
+			maxValue:100,
+			width:7,
+			text: negative,
+			colors:['#f1f1f1', '#F25961'],
+			duration:400,
+			wrpClass:'circles-wrp',
+			textClass:'circles-text',
+			styleWrapper:true,
+			styleText:true
+		})
+
+		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
+		var counts = JSON.parse("{{ data_dash }}");
+        var index = JSON.parse("{{ index_dash }}");
+
+		var mytotalIncomeChart = new Chart(totalIncomeChart, {
+			type: 'bar',
+			data: {
+				labels: index,
+				datasets : [{
+					label: "Overall Sentiment Score",
+					backgroundColor: '#ff9e27',
+					borderColor: 'rgb(23, 125, 255)',
+					data: counts,
+				}],
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				legend: {
+					display: false,
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							display: false //this will remove only the label
+						},
+						gridLines : {
+							drawBorder: false,
+							display : false
+						}
+					}],
+					xAxes : [ {
+						gridLines : {
+							drawBorder: false,
+							display : false
+						}
+					}]
+				},
+			}
+		});
+
+		var counts = JSON.parse("{{ data_dash }}");
+
+		$('#lineChart').sparkline(counts, {
+			type: 'line',
+			height: '70',
+			width: '100%',
+			lineWidth: '2',
+			lineColor: '#ffa534',
+			fillColor: 'rgba(255, 165, 52, .14)'
+		});
+	</script>
+
+{% endblock javascripts %}

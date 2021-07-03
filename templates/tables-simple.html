@@ -1,0 +1,458 @@
+{% extends "base.html" %}
+{% block title %} Tables {% endblock %}
+{% block stylesheets %}{% endblock stylesheets %}
+{% block content %}
+                        <div class="content">
+                    		<div class="page-inner">
+                    			<div class="page-header">
+                    				<h4 class="page-title">Sentiments Table</h4>
+                    				<ul class="breadcrumbs">
+                    					<li class="nav-home">
+                    						<a href="#">
+                    							<i class="flaticon-home"></i>
+                    						</a>
+                    					</li>
+                    					<li class="separator">
+                    						<i class="flaticon-right-arrow"></i>
+                    					</li>
+                    					<li class="nav-item">
+                    						<a href="#">Tables</a>
+                    					</li>
+                    					<li class="separator">
+                    						<i class="flaticon-right-arrow"></i>
+                    					</li>
+                    					<li class="nav-item">
+                    						<a href="#">Sentiments Table</a>
+                    					</li>
+                    				</ul>
+                    			</div>
+                    			<div class="row">
+                    				<div class="col-md-12">
+                    					<div class="card">
+                    						<div class="card-header">
+                    							<h4 class="card-title">Reviews with Sentiments and Score</h4>
+                    						</div>
+                    						<div class="card-body">
+                    							<div class="table-responsive">
+                        <table border="0" class="dataframe display table table-striped table-hover" id = "basic-datatables">
+  <thead>
+    <tr >
+      <th></th>
+      <th>Customer Name</th>
+      <th>Review</th>
+      <th>Date</th>
+      <th>sentiment score</th>
+      <th>predicted_label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Brian S. Cropp</td>
+      <td>So far have only used it for some batting practice hitting off a tee into a net, and one full team practice hitting pitches.  When you hit the sweet spot the ball really pops off the bat.  The grip feels great in the hands and no slipping at all.  I'm not an avid player, just for fun in a local church league</td>
+      <td>May 31, 2021</td>
+      <td>0.99</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Jynetix</td>
+      <td>Ordered bat to have for new season starting in 2 1/2 months. So the month to return passed before unwrapping.Used the bat twice and cracked. Bit contacts were off barrel, and crack is at the joint. Unable to return to Amazon for exchange or refund. Now I have to wait 2 months to get a replacement from Miken. Worried it will crack as well.</td>
+      <td>March 16, 2021</td>
+      <td>0.00</td>
+      <td>negative</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Robert Imeidopf</td>
+      <td>After reading reviews about this bats performance I made the purchase.  My bat is 27 .oz end loaded.  It is an aluminum alloy double wall bat.  It doesn't have the pop or feel of other Mikens I've hit with.  I am disappointed in the way the ball comes off the bat.  I will give it some more time in my bag and hope it improves.</td>
+      <td>January 8, 2021</td>
+      <td>0.27</td>
+      <td>negative</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Alan Schultz</td>
+      <td>I hadn't played organized league softball in 40 years years so needed a bat instead of having to borrow others' each time... this one looked like good value ... makes a pinging noise unlike the composite bats, but appears to be solid and no issues so far ... I can't compare it with anything else for the distance and pop because I hadn't played in so long, and at 66 have certainly lost some of the power I had 35 years ... but for my senior league use I am happy with it ... another guy on my team said his old bat was dead and used mine a week or so, then bought one as well.</td>
+      <td>June 2, 2021</td>
+      <td>0.75</td>
+      <td>neutral</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>S. Olivares</td>
+      <td>Purchased this bat for my husband as a Christmas present and because the pandemic his first time using it was end of March 2021. He loved it. He said it was perfect.</td>
+      <td>March 31, 2021</td>
+      <td>0.99</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Amazon Customer</td>
+      <td>Never even swung the bat, found it was already cracked. Feels good in hand and its a good looking bat. But someone struck out on this one.</td>
+      <td>May 7, 2021</td>
+      <td>0.54</td>
+      <td>neutral</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Cy</td>
+      <td>The  Moment Chaos has fully met my expectations. When I make good contact the ball flies off the bat. For the price it performs as well as a $200 bat</td>
+      <td>November 7, 2020</td>
+      <td>0.99</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Lia Pasquale</td>
+      <td>Got this as a gift for my brother. We broke it in at the cages and this thing hits like a beast. Love it! Might get another for myself…</td>
+      <td>June 30, 2021</td>
+      <td>0.73</td>
+      <td>neutral</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Amazon Customer</td>
+      <td>Bat is aluminum barrel vice composite</td>
+      <td>February 14, 2021</td>
+      <td>0.48</td>
+      <td>neutral</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Jacqueline saavedra</td>
+      <td>Si llego bien</td>
+      <td>November 24, 2020</td>
+      <td>0.58</td>
+      <td>neutral</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Jason Schneider</td>
+      <td>Wasn’t expecting a whole lot but I figure I’ll give it a try and see if the crack is structural or just cosmetic. Might just be an expensive metal stick, we’ll see</td>
+      <td>June 12, 2021</td>
+      <td>0.09</td>
+      <td>negative</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>D</td>
+      <td>May be a good bat. May not be a good bat. Didn't get to use it because it came out of the box with a crack where the 2 pieces meet. Other reviews have pictures of cracks and mine was in the same spot.</td>
+      <td>May 18, 2021</td>
+      <td>0.05</td>
+      <td>negative</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Michael</td>
+      <td>Doesn’t sound great off the bat.  Hopefully it just needs broke in.  So far... not impressed</td>
+      <td>May 24, 2021</td>
+      <td>0.21</td>
+      <td>negative</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Galo Asalele</td>
+      <td>Solid bat for such a great price! Very good unisex bat!!</td>
+      <td>April 13, 2021</td>
+      <td>0.98</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>DEBBIE BENNETT</td>
+      <td>Awesome bat!!! Has a really good pop for brand new can’t wait to see what it does when broke in.</td>
+      <td>February 20, 2021</td>
+      <td>0.94</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Misty</td>
+      <td>Straight out the wrapper swung once and this happened still under warranty hopefully they’ll replace it</td>
+      <td>June 23, 2021</td>
+      <td>0.08</td>
+      <td>negative</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>anthony</td>
+      <td>Very good for slow pitch has great pop and the balls take flight.</td>
+      <td>December 16, 2020</td>
+      <td>0.86</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>John W.</td>
+      <td>Liked the look</td>
+      <td>June 21, 2021</td>
+      <td>0.62</td>
+      <td>neutral</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Arquímedes barrios</td>
+      <td>Es made en China entendía que Miken fabricaba en usa e igual llegó con una fisura en el barril</td>
+      <td>February 21, 2021</td>
+      <td>0.75</td>
+      <td>neutral</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Antoinette</td>
+      <td>I know this bat was made to improve athletes' performance. It's lightweight, has a solid grip, and is nearly indestructible. That's all fine and good. The best part about this bat is how it looks. The neon green blazes out from the black background. Swinging this bat looks like a scene from a cartoon. I can see why it's a collector's piece. I wouldn't want to use this and take the chance of messing it up. It's a great overall bat. I highly recommend it.Thanks so much for taking the time to read this review. I hope the information that I've provided makes your decision a little easier.</td>
+      <td>December 9, 2020</td>
+      <td>0.99</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Rob P</td>
+      <td>After doing some research while looking for a new softball bat,  I found that this bat is only available through Amazon.  The price is great compared to some of the other bats I had been considering.I ordered the 27oz bat, which is 1oz lighter than the weight I typically use.  I was pleasantly surprised when swinging the bat for the first time, it has a very sturdy feeling to it even though it is light weight compared to my previous bat.This bat has some serious pop.  The only thing that has changed for me was this new bat, and there was a huge improvement,  I was crushing the ball.  The ball was was just flying off the bat every hit, with a very satisfying “pop” sound each time.Another thing to mention here is that this is a good looking bat, I really like the color scheme, it immediately catches your eye and stands out from most of the other bats.</td>
+      <td>January 3, 2021</td>
+      <td>1.00</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Travis Jones</td>
+      <td>Ok if any one who looks at this that plays in my senior league just scroll by. But for all you others let me just say that from the moment I held this bat in my hands I fell in love. Then after taking only one batting practice with it and only swinging 70% the ball flow off the bat. My teammates will be buying this bat for themselves. It is everything it was advertised to be. And the sweat spot oh my gosh, hard to miss it as it is so large. BTW I got the largest and heaviest one they make. When I enter the batters box I feel like I'm a gladiator in the Coliseum.</td>
+      <td>October 7, 2020</td>
+      <td>0.57</td>
+      <td>neutral</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Dipped in Ink</td>
+      <td>I’m usually partial to the look and drive of the composite material bats as opposed to aluminum ones. My normal preference are the double wall composites. This one is a single wall aluminum, so it gives a bit of a different feel when the flex comes into play on the strike. It took a little adjustment, but it is quickly becoming a favorite in my bag lineup!The look of the bat itself is dynamic. I got the lighter weight 26 oz. because I wanted to see what a difference it made. I like the touch of weight on the end load of the bat. It really seemed to make a difference on the strike for placement to give the ball a little extra height as opposed to straight popping it. It has a great sweet spot for striking, increasing my ability to give the ball more control over the direction I want it to go.</td>
+      <td>March 12, 2021</td>
+      <td>0.99</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Brett</td>
+      <td>Though my normal adult slowpitch league was cancelled this year due to COVID, I’ve been on the look out for a new bat to replace an older one that died after many years of service in last years’ finale.  This bat had what I was looking for in terms of length and weight - and feels much better to swing than the old bat.The grip is nice, the construction seems to be very solid - while I likely won’t have a chance to actually hit with it this year, I have high hopes that this will hold up as well as prior bats that have lasted numerous seasons.  It’s also attractive in a black and yellow design - though this is secondary to functionality of course.</td>
+      <td>September 25, 2020</td>
+      <td>0.88</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Joe American</td>
+      <td>Nice weight and balance. I'm unusual, but I like a wider grip area, but this diameter is most common (a little skinnier than I like).Like another reviewer, no league this year (Covid), but it feels great and works well. Look forward to using it in more serious situations.It's important that it's approved for softball leagues (which it is); in my experience, umpires often want to see that since there are many "corked" versions out there that let you hit like Babe Ruth (and hurt somebody - there's a reason it's softball, not baseball).Solid bat. Glad to have it.</td>
+      <td>September 29, 2020</td>
+      <td>1.00</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Chen Sun</td>
+      <td>Though I may love this bat for my adults’ sandlot practices, different players will react differently.  Looks great with its excellent polished metal.  It’s light in weight, grips softly, and, when hit at the right spot, truly rings!  This crisp ring suggests its internals are precision cut and well balanced. We’ll be starting up our pandemic-times, casual practices quickly.  This medium price bat won’t disappoint many adult practicing players.It’s difficult to rate a 5 star for a bat because their advances are minor—it is, after all, a bat.  4 stars.</td>
+      <td>September 28, 2020</td>
+      <td>0.97</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Zen Yurt</td>
+      <td>Miken Exclusive 2021 Chaos All Association Slowpitch Softball Bat SeriesIn the opinion of my daughter, who has been playing softball for years, this is an amazing bat! It hits solid, doesn't hurt the hands when you hit the ball, and it's perfect for slow pitch. It's flashy and cool looking too. My daughter was so excited about it she couldn't wait to arrange an outing with her dad and sister to go hit some balls. She's in heaven with this bat. This was definitely a very special gift for her and she couldn't be happier with it.</td>
+      <td>February 3, 2021</td>
+      <td>0.99</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Haruka</td>
+      <td>The MIKEN bat is great! The metal is strong yet light. The rubber makes for a firm grip. It is not heavy so one can easily swing the bat.The color combination of yellow green on black make it stand out and easy to spot.This is a good bat for batters that prefer fast swings.  The lighter weight does not tire the arms out as much when practicing.It would be good to have the option of a longer bat that would have more reach to it.</td>
+      <td>February 19, 2021</td>
+      <td>0.99</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>G. Simms</td>
+      <td>I'm a senior softball player (50+, 55+,65+, 70+ leagues) and this is a very nice bat at the price. Since I'm not quite ready for a super-senior bat, I didn't want to invest the $350 or more for a eal hugh quality bat, since I don't reach the fences anyway. This is well made, and I had a good time in a batting cage with it while the ice and snow was falling outdoors. Nice looking, too. anf ffrom a great manufacturer. Approved for all levels of play.</td>
+      <td>February 14, 2021</td>
+      <td>0.57</td>
+      <td>neutral</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Circling Back</td>
+      <td>Love this bat! I was actually surprised at how solid it feels during the swing and how large it's sweet spot is. Like a lot of people my local softball team is on hold due to covid but until the get going I'll be able to keep up my practice with this and a batting cage so I'm very happy with it.</td>
+      <td>October 11, 2020</td>
+      <td>1.00</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>the eliminator</td>
+      <td>This is a really nice softball bat. Unfortunately my league is on hiatus because 2020, but the bat will be ready when things start back up again. The grip and balance feel really good, and the few balls I've hit in the back yard to test have really popped off the bat. It has a nice ring to it on contact. I can't wait to fully break it in and see what it's capable of in game but all signs point to it being a star and it feels comparable to much more expensive bats.</td>
+      <td>November 30, 2020</td>
+      <td>0.46</td>
+      <td>neutral</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Amadeus B. Klein</td>
+      <td>I like this little bat, it's just 28 oz and works great for my kids softball needs. I also like the fact it is sturdy enough to hit harder objects and I think should this pandemic turn Zombie this wil make a good one to have around. the build quality os very good.Just my thoughts,AK</td>
+      <td>October 7, 2020</td>
+      <td>0.98</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Omnicess</td>
+      <td>This is a very sturdy bat, that's the impression I got right away. The way it's built makes it feel sturdy, and highly capable of hitting a ball really far.Compared to other bats, to me, it seems pretty sturdy, it is for softball, but compared to baseball it's pretty decent too.I like the look of it, the design and the functionality so I'd say it is a good option.</td>
+      <td>October 24, 2020</td>
+      <td>0.99</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>aly.me</td>
+      <td>I am not a baseball or softball player... So admittedly I don’t know a ton about bats... But it was given as a gift and they were very happy to get it! They said it was really nice, easy to swing, and lightweight and feels good.It has a great grip on it that reminds me of tire grip. It’s extremely light and a good size, doesn’t feel too long or short at all. Overall really happy with this and would recommend it to others!</td>
+      <td>December 29, 2020</td>
+      <td>1.00</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Lizziefamily</td>
+      <td>The Miken Chaos 2021 slowpitch softball bat is great for recreational and league play. It swings light and has a comfortable grip. It may be less powerful than other Miken tournament bats, however it's substantial to perform well, over an extended period of time. I would recommend for all competitive players. Good for line drive hitters, not looking for too much flight carry.</td>
+      <td>January 21, 2021</td>
+      <td>0.95</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Kami</td>
+      <td>This is my second Miken Chaos softball bat and I love this just as much as the prior version that I owned.  This bat is well balanced and incredibly easy to swing smoothly.  It has a solid grip and just feels great in your hands.  It has a giant sweet spot which allows for more miss than some of my other bats.  It was hot out of the wrapper and seems nearly indestructible.</td>
+      <td>May 19, 2021</td>
+      <td>0.99</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Darshit Patel</td>
+      <td>The bat did not come out the wrapper hot. It took a several games and a couple of people using the bat to break it in. But once the bat was broken in, the ball was popping off the bat and the hits and homer runs started adding up.</td>
+      <td>November 10, 2020</td>
+      <td>0.44</td>
+      <td>neutral</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Buzgal</td>
+      <td>This is the perfect size and the weight is awesome.I love the design of it, I feel like it feels well with my personality.The grip is easy to hold and it does work very well.The size is just perfect for me and the weight is perfect for the well balanced swing!I am glad I got this</td>
+      <td>December 9, 2020</td>
+      <td>1.00</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>V. Leonelli</td>
+      <td>Excellent! Well balanced, thin handle. I really like how the ball just pops of this big, end loaded barrel. I've owned several Miken Freaks over the years with great success, then and bounced around sampling other brands. Miken is once again the favorite in the bat bag.</td>
+      <td>October 15, 2020</td>
+      <td>0.99</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Photo Film Club</td>
+      <td>This bat looks and feels great. Most of the weight is in the end, so it feels a bit slow-starting when you swing, but it picks up nicely and has a good solid feel to it and a lot of power when you make contact with the ball.</td>
+      <td>April 29, 2021</td>
+      <td>0.99</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>Krystina</td>
+      <td>Perfect weight and balance. Even though its a softball bat it is great for casual baseball too. Its a bit heavy for me so maybe drop down in oz if you are like me, otherwise the 28oz works well for my husband</td>
+      <td>November 27, 2020</td>
+      <td>0.99</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Sage B</td>
+      <td>I didn’t have one for softball that I play occasionally. This gives me my own bat for my bag, so I can practice at the batting cages and during games. It’s well made, sturdy, and is a good length for me.</td>
+      <td>December 26, 2020</td>
+      <td>0.95</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Kristin</td>
+      <td>Im really excited to use this when my season starts. The bat is a great weight and good quality. Perfect fit and glad it is approved to play in my league. Cant wait to see how I hit with it</td>
+      <td>March 27, 2021</td>
+      <td>0.99</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Jimster480</td>
+      <td>Extremely light weight bat considering how hard it hits. New modern tech bats I guess can be both light and hard hitting. Haven't used one like this before. Construction is sturdy so hopefully it lasts a long time.</td>
+      <td>November 11, 2020</td>
+      <td>0.92</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>David</td>
+      <td>This bat for it's price is a good buy. The bat isn't quite a out of the park bat. If you do however want a bat that delivers decent runs for a small price, this is it. I have used it in several practices and a few games, and it performed well each time. The bat feels a little lighter than it's listing so if you like a 26oz, you might want a 27 for that same solid feel in swing. So far I have no complaints about this bat. You want an eye catcher at the plate, this bat sticks out well.</td>
+      <td>June 12, 2021</td>
+      <td>0.98</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>QueenB</td>
+      <td>This is a great quality bat. Durable and nice.</td>
+      <td>February 12, 2021</td>
+      <td>0.99</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>Kerchenski</td>
+      <td>Perfect for baseball. Great bat</td>
+      <td>November 29, 2020</td>
+      <td>0.98</td>
+      <td>positive</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>mike</td>
+      <td>Nice looking bat, I ordered it because it said “approved for all leagues” which isn’t true, since it’s not ASA approved. So if you’re league requires an ASA bat, do not purchase this one.</td>
+      <td>June 16, 2021</td>
+      <td>0.52</td>
+      <td>neutral</td>
+    </tr>
+  </tbody>
+</table>
+                        </div>
+                        						</div>
+                        					</div>
+                        				</div>
+                        			</div>
+                        		</div>
+                        	</div>
+
+                        {% endblock content %}
+
+                        <!-- Specific Page JS goes HERE  -->
+                        {% block javascripts %}
+
+                        	<!-- Atlantis DEMO methods, don't include it in your project! -->
+                        	<script src="/static/js/setting-demo2.js"></script>
+                        	<script >
+                        		$(document).ready(function() {
+                        			$('#basic-datatables').DataTable({
+                        			});
+                        		});
+                        	</script>
+
+                        {% endblock javascripts %}
+                        

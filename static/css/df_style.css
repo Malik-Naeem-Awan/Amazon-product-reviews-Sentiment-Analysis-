@@ -1,0 +1,28 @@
+/* includes alternating gray and white with on-hover color */
+body {
+	background: linear-gradient(45deg, #49a09d, #5f2c82);
+}
+.mystyle {
+    font-size: 11pt;
+    font-family: sans-serif;
+	font-weight: 100;
+    border-collapse: collapse;
+    border: 1px solid silver;
+
+}
+
+.mystyle td, th {
+    padding: 5px;
+    background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+.mystyle tr:nth-child(even) {
+    background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+.mystyle tr:hover {
+    background: silver;
+    cursor: pointer;
+}

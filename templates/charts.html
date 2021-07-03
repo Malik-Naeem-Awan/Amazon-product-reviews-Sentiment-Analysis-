@@ -1,0 +1,503 @@
+{% extends "base.html" %}
+
+{% block title %} Charts {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+	<div class="content">
+		<div class="page-inner">
+			<h4 class="page-title">Charts</h4>
+			<div class="page-category">Here is the complete Analysis and Graphical information of the Amazon product reviews.</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Line Chart</div>
+						</div>
+						<div class="card-body">
+							<div class="chart-container">
+								<canvas id="lineChart"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Bar Chart</div>
+						</div>
+						<div class="card-body">
+							<div class="chart-container">
+								<canvas id="barChart"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Pie Chart</div>
+						</div>
+						<div class="card-body">
+							<div class="chart-container">
+								<canvas id="pieChart" style="width: 50%; height: 50%"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Doughnut Chart</div>
+						</div>
+						<div class="card-body">
+							<div class="chart-container">
+								<canvas id="doughnutChart" style="width: 50%; height: 50%"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+<!--				<div class="col-md-6">-->
+<!--					<div class="card">-->
+<!--						<div class="card-header">-->
+<!--							<div class="card-title">Radar Chart</div>-->
+<!--						</div>-->
+<!--						<div class="card-body">-->
+<!--							<div class="chart-container">-->
+<!--								<canvas id="radarChart"></canvas>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="col-md-6">-->
+<!--					<div class="card">-->
+<!--						<div class="card-header">-->
+<!--							<div class="card-title">Bubble Chart</div>-->
+<!--						</div>-->
+<!--						<div class="card-body">-->
+<!--							<div class="chart-container">-->
+<!--								<canvas id="bubbleChart"></canvas>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Multiple Line Chart</div>
+						</div>
+						<div class="card-body">
+							<div class="chart-container">
+								<canvas id="multipleLineChart"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+<!--				<div class="col-md-6">-->
+<!--					<div class="card">-->
+<!--						<div class="card-header">-->
+<!--							<div class="card-title">Multiple Bar Chart</div>-->
+<!--						</div>-->
+<!--						<div class="card-body">-->
+<!--							<div class="chart-container">-->
+<!--								<canvas id="multipleBarChart"></canvas>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Legend Chart</div>
+						</div>
+						<div class="card-body">
+							<div class="card-sub">
+								This is the complete Analysis and Graphical View of your product.
+							</div>
+							<div class="chart-container">
+								<canvas id="htmlLegendsChart"></canvas>
+							</div>
+							<div id="myChartLegend"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+	<!-- Atlantis DEMO methods, don't include it in your project! -->
+	<script src="/static/js/setting-demo2.js"></script>
+	<script>
+		var lineChart = document.getElementById('lineChart').getContext('2d'),
+		barChart = document.getElementById('barChart').getContext('2d'),
+		pieChart = document.getElementById('pieChart').getContext('2d'),
+		doughnutChart = document.getElementById('doughnutChart').getContext('2d'),
+<!--		radarChart = document.getElementById('radarChart').getContext('2d'),-->
+<!--		bubbleChart = document.getElementById('bubbleChart').getContext('2d'),-->
+		multipleLineChart = document.getElementById('multipleLineChart').getContext('2d'),
+<!--		multipleBarChart = document.getElementById('multipleBarChart').getContext('2d'),-->
+		htmlLegendsChart = document.getElementById('htmlLegendsChart').getContext('2d');
+
+        var counts = JSON.parse("{{ data }}");
+        var index = JSON.parse("{{ index }}");
+		var myLineChart = new Chart(lineChart, {
+			type: 'line',
+
+			data: {
+				labels: index,
+				datasets: [{
+					label: "Sentiment Scores",
+					borderColor: "#1d7af3",
+					pointBorderColor: "#FFF",
+					pointBackgroundColor: "#1d7af3",
+					pointBorderWidth: 2,
+					pointHoverRadius: 4,
+					pointHoverBorderWidth: 1,
+					pointRadius: 4,
+					backgroundColor: 'transparent',
+					fill: true,
+					borderWidth: 2,
+					data: counts,
+				}]
+			},
+			options : {
+				responsive: true, 
+				maintainAspectRatio: false,
+				legend: {
+					position: 'bottom',
+					labels : {
+						padding: 10,
+						fontColor: '#1d7af3',
+					}
+				},
+				tooltips: {
+					bodySpacing: 4,
+					mode:"nearest",
+					intersect: 0,
+					position:"nearest",
+					xPadding:10,
+					yPadding:10,
+					caretPadding:10
+				},
+				layout:{
+					padding:{left:15,right:15,top:15,bottom:15}
+				}
+			}
+		});
+		var counts = JSON.parse("{{ data }}");
+        var index = JSON.parse("{{ index }}");
+		var myBarChart = new Chart(barChart, {
+			type: 'bar',
+			data: {
+				labels: index,
+				datasets : [{
+					label: "Sentiment Scores",
+					backgroundColor: 'rgb(23, 125, 255)',
+					borderColor: 'rgb(23, 125, 255)',
+					data: counts,
+				}],
+			},
+			options: {
+				responsive: true, 
+				maintainAspectRatio: false,
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero:true
+						}
+					}]
+				},
+			}
+		});
+
+		var counts = JSON.parse("{{ sentiments }}");
+
+		var myPieChart = new Chart(pieChart, {
+			type: 'pie',
+			data: {
+				datasets: [{
+					data: counts,
+					backgroundColor :["#1d7af3","#f3545d","#fdaf4b"],
+					borderWidth: 0
+				}],
+				labels: ['Positive', 'Negative', 'Neutral']
+			},
+			options : {
+				responsive: true, 
+				maintainAspectRatio: false,
+				legend: {
+					position : 'bottom',
+					labels : {
+						fontColor: 'rgb(154, 154, 154)',
+						fontSize: 11,
+						usePointStyle : true,
+						padding: 20
+					}
+				},
+				pieceLabel: {
+					render: 'percentage',
+					fontColor: 'white',
+					fontSize: 14,
+				},
+				tooltips: false,
+				layout: {
+					padding: {
+						left: 20,
+						right: 20,
+						top: 20,
+						bottom: 20
+					}
+				}
+			}
+		})
+
+		var counts = JSON.parse("{{ sentiments }}");
+
+		var myDoughnutChart = new Chart(doughnutChart, {
+			type: 'doughnut',
+			data: {
+				datasets: [{
+					data: counts,
+					backgroundColor :["#1d7af3","#f3545d","#fdaf4b"],
+				}],
+
+				labels: [
+				'Positive',
+				'Negative',
+				'Neutral'
+				]
+			},
+			options: {
+				responsive: true, 
+				maintainAspectRatio: false,
+				legend : {
+					position: 'bottom'
+				},
+				layout: {
+					padding: {
+						left: 20,
+						right: 20,
+						top: 20,
+						bottom: 20
+					}
+				}
+			}
+		});
+
+        var index_2 = JSON.parse("{{ index_2 }}");
+        var pred_pos = JSON.parse("{{ pred_pos }}");
+        var pred_neg = JSON.parse("{{ pred_neg }}");
+        var pred_neu = JSON.parse("{{ pred_neu }}");
+		var myMultipleLineChart = new Chart(multipleLineChart, {
+			type: 'line',
+			data: {
+				labels: index_2,
+				datasets: [{
+					label: "Positive",
+					borderColor: "#59d05d",
+					pointBorderColor: "#FFF",
+					pointBackgroundColor: "#1d7af3",
+					pointBorderWidth: 2,
+					pointHoverRadius: 4,
+					pointHoverBorderWidth: 1,
+					pointRadius: 0,
+					backgroundColor: 'transparent',
+					fill: true,
+					borderWidth: 2,
+					data: pred_pos,
+				},{
+					label: "Neutral",
+					borderColor: "#FFC107",
+					pointBorderColor: "#FFF",
+					pointBackgroundColor: "#59d05d",
+					pointBorderWidth: 2,
+					pointHoverRadius: 4,
+					pointHoverBorderWidth: 1,
+					pointRadius: 0,
+					backgroundColor: 'transparent',
+					fill: true,
+					borderWidth: 2,
+					data: pred_neu,
+				}, {
+					label: "Negative",
+					borderColor: "#f3545d",
+					pointBorderColor: "#FFF",
+					pointBackgroundColor: "#f3545d",
+					pointBorderWidth: 2,
+					pointHoverRadius: 4,
+					pointHoverBorderWidth: 1,
+					pointRadius: 0,
+					backgroundColor: 'transparent',
+					fill: true,
+					borderWidth: 2,
+					data: pred_neg,
+				}]
+			},
+			options : {
+				responsive: true, 
+				maintainAspectRatio: false,
+				legend: {
+					position: 'top',
+				},
+				tooltips: {
+					bodySpacing: 4,
+					mode:"nearest",
+					intersect: 0,
+					position:"nearest",
+					xPadding:10,
+					yPadding:10,
+					caretPadding:10
+				},
+				layout:{
+					padding:{left:15,right:15,top:15,bottom:15}
+				}
+			}
+		});
+
+		// Chart with HTML Legends
+
+		var gradientStroke = htmlLegendsChart.createLinearGradient(500, 0, 100, 0);
+		gradientStroke.addColorStop(0, '#177dff');
+		gradientStroke.addColorStop(1, '#80b6f4');
+
+		var gradientFill = htmlLegendsChart.createLinearGradient(500, 0, 100, 0);
+		gradientFill.addColorStop(0, "rgba(23, 125, 255, 0.7)");
+		gradientFill.addColorStop(1, "rgba(128, 182, 244, 0.3)");
+
+		var gradientStroke2 = htmlLegendsChart.createLinearGradient(500, 0, 100, 0);
+		gradientStroke2.addColorStop(0, '#f3545d');
+		gradientStroke2.addColorStop(1, '#ff8990');
+
+		var gradientFill2 = htmlLegendsChart.createLinearGradient(500, 0, 100, 0);
+		gradientFill2.addColorStop(0, "rgba(243, 84, 93, 0.7)");
+		gradientFill2.addColorStop(1, "rgba(255, 137, 144, 0.3)");
+
+		var gradientStroke3 = htmlLegendsChart.createLinearGradient(500, 0, 100, 0);
+		gradientStroke3.addColorStop(0, '#fdaf4b');
+		gradientStroke3.addColorStop(1, '#ffc478');
+
+		var gradientFill3 = htmlLegendsChart.createLinearGradient(500, 0, 100, 0);
+		gradientFill3.addColorStop(0, "rgba(253, 175, 75, 0.7)");
+		gradientFill3.addColorStop(1, "rgba(255, 196, 120, 0.3)");
+
+        var index = JSON.parse("{{ index_2 }}");
+        var pred_pos = JSON.parse("{{ pred_pos }}");
+        var pred_neg = JSON.parse("{{ pred_neg }}");
+        var pred_neu = JSON.parse("{{ pred_neu }}");
+		var myHtmlLegendsChart = new Chart(htmlLegendsChart, {
+			type: 'line',
+			data: {
+				labels: index,
+				datasets: [ {
+					label: "Negative",
+					borderColor: gradientStroke2,
+					pointBackgroundColor: gradientStroke2,
+					pointRadius: 0,
+					backgroundColor: gradientFill2,
+					legendColor: '#f3545d',
+					fill: true,
+					borderWidth: 1,
+					data: pred_neg
+				}, {
+					label: "Neutral",
+					borderColor: gradientStroke3,
+					pointBackgroundColor: gradientStroke3,
+					pointRadius: 0,
+					backgroundColor: gradientFill3,
+					legendColor: '#fdaf4b',
+					fill: true,
+					borderWidth: 1,
+					data: pred_neu
+				}, {
+					label: "Positive",
+					borderColor: gradientStroke,
+					pointBackgroundColor: gradientStroke,
+					pointRadius: 0,
+					backgroundColor: gradientFill,
+					legendColor: '#177dff',
+					fill: true,
+					borderWidth: 1,
+					data: pred_pos
+				}]
+			},
+			options : {
+				responsive: true, 
+				maintainAspectRatio: false,
+				legend: {
+					display: false
+				},
+				tooltips: {
+					bodySpacing: 4,
+					mode:"nearest",
+					intersect: 0,
+					position:"nearest",
+					xPadding:10,
+					yPadding:10,
+					caretPadding:10
+				},
+				layout:{
+					padding:{left:15,right:15,top:15,bottom:15}
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							fontColor: "rgba(0,0,0,0.5)",
+							fontStyle: "500",
+							beginAtZero: false,
+							maxTicksLimit: 5,
+							padding: 20
+						},
+						gridLines: {
+							drawTicks: false,
+							display: false
+						}
+					}],
+					xAxes: [{
+						gridLines: {
+							zeroLineColor: "transparent"
+						},
+						ticks: {
+							padding: 20,
+							fontColor: "rgba(0,0,0,0.5)",
+							fontStyle: "500"
+						}
+					}]
+				}, 
+				legendCallback: function(chart) { 
+					var text = []; 
+					text.push('<ul class="' + chart.id + '-legend html-legend">'); 
+					for (var i = 0; i < chart.data.datasets.length; i++) { 
+						text.push('<li><span style="background-color:' + chart.data.datasets[i].legendColor + '"></span>'); 
+						if (chart.data.datasets[i].label) { 
+							text.push(chart.data.datasets[i].label); 
+						} 
+						text.push('</li>'); 
+					} 
+					text.push('</ul>'); 
+					return text.join(''); 
+				}  
+			}
+		});
+
+		var myLegendContainer = document.getElementById("myChartLegend");
+
+		// generate HTML legend
+		myLegendContainer.innerHTML = myHtmlLegendsChart.generateLegend();
+
+		// bind onClick event to all LI-tags of the legend
+		var legendItems = myLegendContainer.getElementsByTagName('li');
+		for (var i = 0; i < legendItems.length; i += 1) {
+			legendItems[i].addEventListener("click", legendClickCallback, false);
+		}
+
+	</script>
+
+{% endblock javascripts %}
